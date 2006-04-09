@@ -13,7 +13,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 %if "%fedora" <= "4" 
 BuildRequires:  xorg-x11-devel, readline-devel
 %else
-BuildRequires: libX11-devel, readline-devel, libXtst-devel
+BuildRequires: libX11-devel, readline-devel, xorg-x11-proto-devel
 %endif
 Requires(post): /sbin/install-info
 Requires(preun): /sbin/install-info
