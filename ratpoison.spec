@@ -2,7 +2,7 @@
 
 Name:           ratpoison
 Version:        1.4.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
 License:        GPL
@@ -13,7 +13,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 %if %{fedora} <= 4 
 BuildRequires:  xorg-x11-devel, readline-devel
 %else
-BuildRequires: libX11-devel, readline-devel, libXtst-devel
+BuildRequires: libX11-devel, readline-devel, libXt-devel, libXinerama-devel, libXtst-devel
 %endif
 Requires(post): /sbin/install-info
 Requires(preun): /sbin/install-info
@@ -66,6 +66,9 @@ fi
 %{_datadir}/xsessions/ratpoison.desktop
 
 %changelog
+* Tue Apr 11 2006 John Berninger <johnw at berningeronline dot net> - 1.4.0-4
+- BuildRequires fixes for FC-devel (FC-6)
+
 * Sat Apr  8 2006 John Berninger <johnw at berningeronline dot net> - 1.4.0-3
 - Permissions fixes
 
