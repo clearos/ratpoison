@@ -2,7 +2,7 @@
 
 Name:           ratpoison
 Version:        1.4.0
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
 License:        GPL
@@ -66,6 +66,9 @@ fi
 %{_datadir}/xsessions/ratpoison.desktop
 
 %changelog
+* Sun Sep 10 2006 John Berninger <johnw at berningeronline dot net> - 1.4.0-5
+- Mass rebuild of FC/FE6
+
 * Tue Apr 11 2006 John Berninger <johnw at berningeronline dot net> - 1.4.0-4
 - BuildRequires fixes for FC-devel (FC-6)
 
