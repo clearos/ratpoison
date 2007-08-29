@@ -5,7 +5,7 @@ Version:        1.4.0
 Release:        5%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
-License:        GPL
+License:        GPLv2+
 URL:            http://www.nongnu.org/ratpoison/
 Source0:        http://savannah.nongnu.org/download/ratpoison/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
