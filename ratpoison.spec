@@ -1,8 +1,8 @@
 %define xsessiondir %{_datadir}/xsessions
 
 Name:           ratpoison
-Version:        1.4.0
-Release:        5%{?dist}
+Version:        1.4.1
+Release:        0%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
 License:        GPLv2+
@@ -66,6 +66,9 @@ fi
 %{_datadir}/xsessions/ratpoison.desktop
 
 %changelog
+* Fri Aug 31 2007 John Berninger <john at ncphotography dot com> - 1.4.1-0
+- update to 1.4.1 - bz 269821
+
 * Sun Sep 10 2006 John Berninger <johnw at berningeronline dot net> - 1.4.0-5
 - Mass rebuild of FC/FE6
 
