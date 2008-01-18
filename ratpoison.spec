@@ -2,7 +2,7 @@
 
 Name:           ratpoison
 Version:        1.4.1
-Release:        0%{?dist}
+Release:        1%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
 License:        GPLv2+
@@ -66,6 +66,9 @@ fi
 %{_datadir}/xsessions/ratpoison.desktop
 
 %changelog
+* Fri Jan 18 2008 John Berninger <john at ncphotography dot com> - 1.4.1-1
+- rebuild for deps
+
 * Fri Aug 31 2007 John Berninger <john at ncphotography dot com> - 1.4.1-0
 - update to 1.4.1 - bz 269821
 
