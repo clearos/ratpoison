@@ -1,8 +1,8 @@
 %define xsessiondir %{_datadir}/xsessions
 
 Name:           ratpoison
-Version:        1.4.1
-Release:        3%{?dist}
+Version:        1.4.4
+Release:        1%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
 License:        GPLv2+
@@ -10,11 +10,7 @@ URL:            http://www.nongnu.org/ratpoison/
 Source0:        http://savannah.nongnu.org/download/ratpoison/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-%if %{fedora} <= 4 
-BuildRequires:  xorg-x11-devel, readline-devel
-%else
-BuildRequires: libX11-devel, readline-devel, libXt-devel, libXinerama-devel, libXtst-devel
-%endif
+BuildRequires: libXft-devel, libX11-devel, readline-devel, libXt-devel, libXinerama-devel, libXtst-devel
 Requires(post): /sbin/install-info
 Requires(preun): /sbin/install-info
 
@@ -27,6 +23,7 @@ opposed to keyboard and mouse input.
 
 
 %build
+export CFLAGS+=-DHAVE_GETLINE
 %configure
 make %{?_smp_mflags}
 
@@ -66,6 +63,10 @@ fi
 %{_datadir}/xsessions/ratpoison.desktop
 
 %changelog
+* Thu May 14 2009 Kevin Fenzi <kevin@tummy.com> - 1.4.4-1
+- Update to 1.4.4
+- Add libXft-devel to BuildRequires
+
 * Wed Feb 25 2009 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_11_Mass_Rebuild
 
