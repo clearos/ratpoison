@@ -2,7 +2,7 @@
 
 Name:           ratpoison
 Version:        1.4.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
 License:        GPLv2+
@@ -23,8 +23,8 @@ opposed to keyboard and mouse input.
 
 
 %build
-export CFLAGS+=-DHAVE_GETLINE
-%configure
+export CFLAGS="$RPM_OPT_FLAGS -DHAVE_GETLINE"
+%configure --disable-dependency-tracking
 make %{?_smp_mflags}
 
 
@@ -63,6 +63,11 @@ fi
 %{_datadir}/xsessions/ratpoison.desktop
 
 %changelog
+* Fri Jun 12 2009 Ville Skyttä <ville.skytta at iki.fi> - 1.4.4-2
+- Build with $RPM_OPT_FLAGS.
+- Disable autotools dependency tracking for cleaner build logs and possible
+  slight build speedup.
+
 * Thu May 14 2009 Kevin Fenzi <kevin@tummy.com> - 1.4.4-1
 - Update to 1.4.4
 - Add libXft-devel to BuildRequires
