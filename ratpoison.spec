@@ -2,7 +2,7 @@
 
 Name:           ratpoison
 Version:        1.4.4
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
 License:        GPLv2+
@@ -63,6 +63,9 @@ fi
 %{_datadir}/xsessions/ratpoison.desktop
 
 %changelog
+* Tue Jun 16 2009 Kevin Fenzi <kevin@tummy.com> - 1.4.4-3
+- Rebuild again now that bug #505774 is fixed. 
+
 * Fri Jun 12 2009 Ville Skyttä <ville.skytta at iki.fi> - 1.4.4-2
 - Build with $RPM_OPT_FLAGS.
 - Disable autotools dependency tracking for cleaner build logs and possible
