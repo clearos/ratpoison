@@ -2,7 +2,7 @@
 
 Name:           ratpoison
 Version:        1.4.4
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
 License:        GPLv2+
@@ -10,7 +10,7 @@ URL:            http://www.nongnu.org/ratpoison/
 Source0:        http://savannah.nongnu.org/download/ratpoison/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildRequires: libXft-devel, libX11-devel, readline-devel, libXt-devel, libXinerama-devel, libXtst-devel
+BuildRequires: libXft-devel, libX11-devel, readline-devel, libXt-devel, libXinerama-devel, libXtst-devel, libXi-devel
 Requires(post): /sbin/install-info
 Requires(preun): /sbin/install-info
 
@@ -63,6 +63,9 @@ fi
 %{_datadir}/xsessions/ratpoison.desktop
 
 %changelog
+* Tue Jul 14 2009 Kevin Fenzi <kevin@tummy.com> - 1.4.4-4
+- Add libXi-devel to BuildRequires
+
 * Tue Jun 16 2009 Kevin Fenzi <kevin@tummy.com> - 1.4.4-3
 - Rebuild again now that bug #505774 is fixed. 
 
