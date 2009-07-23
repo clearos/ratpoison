@@ -1,8 +1,8 @@
 %define xsessiondir %{_datadir}/xsessions
 
 Name:           ratpoison
-Version:        1.4.4
-Release:        4%{?dist}
+Version:        1.4.5
+Release:        1%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
 License:        GPLv2+
@@ -63,6 +63,9 @@ fi
 %{_datadir}/xsessions/ratpoison.desktop
 
 %changelog
+* Wed Jul 22 2009 Kevin Fenzi <kevin@tummy.com> - 1.4.5-1
+- Update to 1.4.5
+
 * Tue Jul 14 2009 Kevin Fenzi <kevin@tummy.com> - 1.4.4-4
 - Add libXi-devel to BuildRequires
 
