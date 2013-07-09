@@ -1,8 +1,8 @@
 %define xsessiondir %{_datadir}/xsessions
 
 Name:           ratpoison
-Version:        1.4.5
-Release:        6%{?dist}
+Version:        1.4.6
+Release:        1%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
 License:        GPLv2+
@@ -63,6 +63,9 @@ fi
 %{_datadir}/xsessions/ratpoison.desktop
 
 %changelog
+* Tue Jul 09 2013 Kevin Fenzi <kevin@scrye.com> 1.4.6-1
+- Update to 1.4.6
+
 * Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.5-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
