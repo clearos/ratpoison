@@ -2,7 +2,7 @@
 
 Name:           ratpoison
 Version:        1.4.6
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
 License:        GPLv2+
@@ -63,6 +63,9 @@ fi
 %{_datadir}/xsessions/ratpoison.desktop
 
 %changelog
+* Wed Jul 17 2013 Petr Pisar <ppisar@redhat.com> - 1.4.6-2
+- Perl 5.18 rebuild
+
 * Tue Jul 09 2013 Kevin Fenzi <kevin@scrye.com> 1.4.6-1
 - Update to 1.4.6
 
