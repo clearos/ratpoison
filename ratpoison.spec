@@ -2,7 +2,7 @@
 
 Name:           ratpoison
 Version:        1.4.6
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
 License:        GPLv2+
@@ -63,6 +63,9 @@ fi
 %{_datadir}/xsessions/ratpoison.desktop
 
 %changelog
+* Sun Jun 08 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.6-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
+
 * Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.6-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
