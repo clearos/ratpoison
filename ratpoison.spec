@@ -1,8 +1,8 @@
 %define xsessiondir %{_datadir}/xsessions
 
 Name:           ratpoison
-Version:        1.4.6
-Release:        5%{?dist}
+Version:        1.4.8
+Release:        1%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
 License:        GPLv2+
@@ -11,6 +11,8 @@ Source0:        http://savannah.nongnu.org/download/ratpoison/%{name}-%{version}
 Source1:	%{name}.desktop
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires: libXft-devel, libX11-devel, readline-devel, libXt-devel, libXinerama-devel, libXtst-devel, libXi-devel
+BuildRequires:  emacs
+Requires:       emacs-filesystem >= %{_emacs_version}
 Requires(post): /sbin/install-info
 Requires(preun): /sbin/install-info
 
@@ -61,8 +63,12 @@ fi
 %{_mandir}/man1/ratpoison.1.gz
 %{_datadir}/ratpoison/
 %{_datadir}/xsessions/ratpoison.desktop
+%{_emacs_sitelispdir}/*.el
 
 %changelog
+* Wed May 13 2015 Kevin Fenzi <kevin@scrye.com> 1.4.8-1
+- Update to 1.4.8. Fixes bug #1221160
+
 * Sun Aug 17 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.6-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
 
