@@ -2,7 +2,7 @@
 
 Name:           ratpoison
 Version:        1.4.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
 License:        GPLv2+
@@ -66,6 +66,9 @@ fi
 %{_emacs_sitelispdir}/*.el
 
 %changelog
+* Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.8-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
+
 * Wed May 13 2015 Kevin Fenzi <kevin@scrye.com> 1.4.8-1
 - Update to 1.4.8. Fixes bug #1221160
 
