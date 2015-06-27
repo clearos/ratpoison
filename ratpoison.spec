@@ -2,13 +2,13 @@
 
 Name:           ratpoison
 Version:        1.4.5
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
 License:        GPLv2+
 URL:            http://www.nongnu.org/ratpoison/
 Source0:        http://savannah.nongnu.org/download/ratpoison/%{name}-%{version}.tar.gz
-Source1:	%{name}.desktop
+Patch1:	        ratpoison-1.4.4-no-keys.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires: libXft-devel, libX11-devel, readline-devel, libXt-devel, libXinerama-devel, libXtst-devel, libXi-devel
 Requires(post): /sbin/install-info
@@ -20,6 +20,7 @@ opposed to keyboard and mouse input.
 
 %prep
 %setup -q
+%patch1 -p1
 
 
 %build
@@ -32,7 +33,6 @@ make %{?_smp_mflags}
 rm -rf ${RPM_BUILD_ROOT}
 make install DESTDIR=${RPM_BUILD_ROOT}
 mkdir -p ${RPM_BUILD_ROOT}%{xsessiondir}
-install -m 755 %{SOURCE1} ${RPM_BUILD_ROOT}%{xsessiondir}/
 rm -f ${RPM_BUILD_ROOT}/%{_infodir}/dir
 chmod 755 ${RPM_BUILD_ROOT}/%{_datadir}/ratpoison/allwindows.sh
 chmod 755 ${RPM_BUILD_ROOT}/%{_datadir}/ratpoison/clickframe.pl
@@ -60,9 +60,11 @@ fi
 %{_infodir}/ratpoison.info.gz
 %{_mandir}/man1/ratpoison.1.gz
 %{_datadir}/ratpoison/
-%{_datadir}/xsessions/ratpoison.desktop
 
 %changelog
+* Mon Apr 11 2011 ClearFoundation <developer@clearfoundation.com> - 1.4.5-3.clear
+- Added patch for key bindings
+
 * Sun Jul 26 2009 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.5-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_12_Mass_Rebuild
 
