@@ -1,1 +1,4 @@
 ratpoison-1.4.5.tar.gz
+/Makefile
+*.src.rpm
+*.tar.gz
